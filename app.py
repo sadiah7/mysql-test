@@ -19,10 +19,10 @@ def index():
         lastName = details['lastName']
         cur = mysql.connection.cursor()
         cur.execute("INSERT INTO MyUsers(firstName, lastName) VALUES (%s, %s)", (firstName, lastName))
-        temp = cur.execute("SELECT * FROM MyUsers")
-        records = temp.fetchall()
-        for i in records:
-            print(i)
+#         temp = cur.execute("SELECT * FROM MyUsers")
+#         records = temp.fetchall()
+#         for i in records:
+#             print(i)
         mysql.connection.commit()
         cur.close()
         return 'success'
